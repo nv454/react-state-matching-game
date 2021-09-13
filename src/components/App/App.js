@@ -21,19 +21,18 @@ class App extends Component{
 
   }
 
-  startGame(numTiles){
-  this.setState((state)=>{
-  return(
-  {
+  startGame=(numTiles)=>{
+  this.setState((state)=>({
+  
+  
   playing:true,
   previousTileIndex:null,
   toBeCleared:null,
   tiles:createTiles(state.numTiles)
-  }
+   
+})
   )
 }
- )
-  }
 
 
   render() {
@@ -42,7 +41,7 @@ class App extends Component{
       <header className="App-header">
         Turbo-Matcher
       </header>
-        <OptionsPanel startGame ={startGame} playing={this.state.playing} numTiles={this.state.numTiles} />
+        <OptionsPanel startGame={this.startGame} playing={this.state.playing} numTiles={this.state.numTiles} />
         <Board numTiles={this.state.numTiles} tiles={this.state.tiles}/>
       
     </div>
