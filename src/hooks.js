@@ -29,4 +29,4 @@ useEffect (()=>{
 return [ref,hovered]
 };
 
-export default UseHover;
+export default useHover;

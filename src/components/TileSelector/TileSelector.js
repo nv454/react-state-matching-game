@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './TileSelector.css';
-import UseHover from '../../hooks';
+import useHover from '../../hooks';
 
 const TileSelector = (props) => {
 
