@@ -5,7 +5,7 @@ import {createTiles} from '../../misc/utils';
 import './App.css';
 import {indexOfSelected} from '../../misc/utils';
 import GameContext from '../../GameContext';
-import GameContext from '../../GameContext.js';
+
 
 class App extends Component{
 
