@@ -26,7 +26,6 @@ class App extends Component{
   startGame=(numTiles)=>{
     this.setState((state)=>({
     
-    
     playing:true,
     previousTileIndex:null,
     toBeCleared:null,
@@ -56,6 +55,7 @@ class App extends Component{
        {
         var previousTile=tiles[previousTileIndex];
         var selectedTile= tiles[selectedTileIndex];
+
         if((previousTile.id!==selectedTile.id)&&(previousTile.color===color))
         {
           selectedTile.matched=true;
@@ -73,13 +73,11 @@ class App extends Component{
       }
     return
       {
-        toBeCleared,
-        tiles,
-        previousTileIndex
-      }
-    
-    }  
-    )}
+        toBeCleared, tiles,previousTileIndex
+      }})
+    }
+
+   
 
 
   render() {
