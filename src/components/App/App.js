@@ -35,14 +35,14 @@ class App extends Component{
     })
   )}
 
-  handleTileClicked=(id, color)=>{
+  handleTileClicked =(id, color)=>{
 
     
     this.setState((state)=>{
       const tiles=state.tiles;
       let toBeCleared=state.toBeCleared;
       const selectedTileIndex = indexOfSelected(tiles, id, color);
-      const previousTileIndex = state.previousTileIndex;
+      let previousTileIndex = state.previousTileIndex;
 
       if(toBeCleared!==null)
       {
