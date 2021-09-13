@@ -4,12 +4,9 @@ import GameContext from '../../GameContext.js';
 
 const Button = (props) => ( 
 <GameContext.Consumer>
-{(playing, startGame)=>
 {
-return <button onClick={startGame}>
-{playing ? 'reset' :'start'} </button> 
-}
-
+({playing, startGame})=>
+ <button onClick={startGame}> {playing ? 'reset' :'start'} </button> 
 }
 </GameContext.Consumer>
 )
