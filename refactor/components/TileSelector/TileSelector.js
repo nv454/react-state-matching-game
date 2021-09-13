@@ -7,7 +7,9 @@ const TileSelector = (props) => {
 
 const [ref, hovered] = useHover();
 
-<GameContext.Consumer>
+
+return(
+    <GameContext.Consumer>
 {
 ({numTiles, handleNumTileChange})=>{
 
@@ -32,6 +34,8 @@ const [ref, hovered] = useHover();
 }
 }
 </GameContext.Consumer>
+  )
+
 }
 
 export default TileSelector
