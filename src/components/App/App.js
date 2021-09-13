@@ -35,27 +35,28 @@ class App extends Component{
     })
   )}
 
-  handleTileClicked(id, color){
+  handleTileClicked=(id, color)=>{
 
     
     this.setState((state)=>{
       const tiles=state.tiles;
-      const toBeCleared=state.toBeCleared;
+      let toBeCleared=state.toBeCleared;
       const selectedTileIndex = indexOfSelected(tiles, id, color);
       const previousTileIndex = state.previousTileIndex;
 
       if(toBeCleared!==null)
       {
-        tiles.toBeCleared[0].selected=false;
-        tiles.toBeCleared[1].selected=false;
+        tiles[toBeCleared[0]].selected=false;
+        tiles[toBeCleared[1]].selected=false;
         toBeCleared=null;
       }
-      tiles[selectedTileIndex]=true;
+      tiles[selectedTileIndex].selected=true;
 
-      if(previousTileIndex!==null){
+      if(previousTileIndex!==null)
+       {
         var previousTile=tiles[previousTileIndex];
         var selectedTile= tiles[selectedTileIndex];
-        if((previousTile.id!==selectedTile.id)&&(previousTile.color!==selectedTile.color))
+        if((previousTile.id!==selectedTile.id)&&(previousTile.color===color))
         {
           selectedTile.matched=true;
           previousTile.matched=true;
@@ -70,13 +71,13 @@ class App extends Component{
       else{
         previousTileIndex=selectedTileIndex;
       }
-    return(
+    return
       {
-        toBeCleared:toBeCleared,
-        tiles:tiles,
-        previousTileIndex: previousTileIndex
+        toBeCleared,
+        tiles,
+        previousTileIndex
       }
-    )
+    
     }  
     )}
 
